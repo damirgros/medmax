@@ -1,8 +1,8 @@
-import ThreeScene from "@/components/Interactive3D";
+import ThreeScene from "@/components/ThreeScene";
 
 export default function Home() {
   return (
-    <main className="relative w-full h-screen bg-gradient-to-br from-gray-900 to-black">
+    <main className="min-h-screen">
       <ThreeScene />
     </main>
   );

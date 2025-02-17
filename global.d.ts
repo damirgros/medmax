@@ -48,3 +48,26 @@ declare module "three/examples/jsm/geometries/TextGeometry" {
     );
   }
 }
+
+// global.d.ts
+declare module "three/examples/jsm/controls/OrbitControls" {
+  import { EventDispatcher, Camera } from "three";
+
+  export interface OrbitControlsParameters {
+    object?: Camera;
+    domElement?: HTMLElement;
+    // Add other parameters as needed
+  }
+
+  export class OrbitControls extends EventDispatcher {
+    constructor(object: Camera, domElement?: HTMLElement);
+
+    // Add method declarations
+    enableDamping: boolean;
+    dampingFactor: number;
+    rotateSpeed: number;
+    update: () => void;
+    dispose: () => void;
+    // Add other methods/properties as needed
+  }
+}
