@@ -1,9 +1,15 @@
+import SectionOne from "@/components/SectionOne";
 import ThreeScene from "@/components/ThreeScene";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <ThreeScene />
-    </main>
+    <>
+      <div className="min-h-screen">
+        <ThreeScene />
+      </div>
+      <div>
+        <SectionOne />
+      </div>
+    </>
   );
 }
