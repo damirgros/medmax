@@ -279,12 +279,12 @@ const ThreeScene = () => {
     // Load Heart Model into the Group
     const gltfLoader = new GLTFLoader();
     let heart: THREE.Group | null = null;
-    const baseScale = 8;
+    const baseScale = 2;
 
     gltfLoader.load("/models/robotic_heart.glb", (gltf: GLTF) => {
       heart = gltf.scene as THREE.Group;
       heart.scale.set(baseScale, baseScale, baseScale);
-      heart.position.set(0, -2, 0);
+      heart.position.set(0, -0.4, 0);
 
       // Traverse the heart model and update its material
       heart.traverse((child) => {
@@ -356,10 +356,17 @@ const ThreeScene = () => {
   }, []);
 
   return (
-    <div
-      className="relative w-full h-screen bg-gradient-to-t from-blue-400 to-blue-500"
-      ref={mountRef}
-    ></div>
+    <div className="relative w-full h-screen overflow-hidden" ref={mountRef}>
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        src="/videos/video.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{ zIndex: -1 }}
+      />
+    </div>
   );
 };
 

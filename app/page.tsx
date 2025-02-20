@@ -4,7 +4,7 @@ import ThreeScene from "@/components/ThreeScene";
 export default function Home() {
   return (
     <>
-      <div className="min-h-screen">
+      <div>
         <ThreeScene />
       </div>
       <div>
