@@ -5,6 +5,7 @@ import * as THREE from "three";
 import { GLTFLoader, GLTF } from "three/examples/jsm/loaders/GLTFLoader";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
+import gsap from "gsap";
 
 const ThreeScene = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -70,7 +71,18 @@ const ThreeScene = () => {
       const mesh = new THREE.Mesh(geometry, material);
       mesh.position.set(-0.7, 3, 0);
 
+      mesh.scale.set(0, 0, 0);
+
       scene.add(mesh);
+
+      gsap.to(mesh.scale, {
+        duration: 1,
+        x: 1,
+        y: 1,
+        z: 1,
+        ease: "power2.out",
+        delay: 0.5,
+      });
     });
 
     loader.load("/fonts/helvetiker_regular.typeface.json", function (font) {
@@ -99,7 +111,18 @@ const ThreeScene = () => {
       const mesh = new THREE.Mesh(geometry, material);
       mesh.position.set(-6, 1, 0);
 
+      mesh.scale.set(0, 0, 0);
+
       scene.add(mesh);
+
+      gsap.to(mesh.scale, {
+        duration: 2,
+        x: 1,
+        y: 1,
+        z: 1,
+        ease: "power2.out",
+        delay: 0.5,
+      });
     });
 
     loader.load("/fonts/helvetiker_regular.typeface.json", function (font) {
@@ -128,7 +151,18 @@ const ThreeScene = () => {
       const mesh = new THREE.Mesh(geometry, material);
       mesh.position.set(0, -1.5, 1.5);
 
+      mesh.scale.set(0, 0, 0);
+
       scene.add(mesh);
+
+      gsap.to(mesh.scale, {
+        duration: 2,
+        x: 1,
+        y: 1,
+        z: 1,
+        ease: "power2.out",
+        delay: 0.5,
+      });
     });
 
     loader.load("/fonts/helvetiker_regular.typeface.json", function (font) {
@@ -157,7 +191,18 @@ const ThreeScene = () => {
       const mesh = new THREE.Mesh(geometry, material);
       mesh.position.set(-6, -3, 0);
 
+      mesh.scale.set(0, 0, 0);
+
       scene.add(mesh);
+
+      gsap.to(mesh.scale, {
+        duration: 3,
+        x: 1,
+        y: 1,
+        z: 1,
+        ease: "power2.out",
+        delay: 0.5,
+      });
     });
 
     loader.load("/fonts/helvetiker_regular.typeface.json", function (font) {
@@ -186,7 +231,18 @@ const ThreeScene = () => {
       const mesh = new THREE.Mesh(geometry, material);
       mesh.position.set(-3.5, -1, 0);
 
+      mesh.scale.set(0, 0, 0);
+
       scene.add(mesh);
+
+      gsap.to(mesh.scale, {
+        duration: 3,
+        x: 1,
+        y: 1,
+        z: 1,
+        ease: "power2.out",
+        delay: 0.5,
+      });
     });
 
     loader.load("/fonts/helvetiker_regular.typeface.json", function (font) {
@@ -215,7 +271,18 @@ const ThreeScene = () => {
       const mesh = new THREE.Mesh(geometry, material);
       mesh.position.set(-7, -1.5, 0);
 
+      mesh.scale.set(0, 0, 0);
+
       scene.add(mesh);
+
+      gsap.to(mesh.scale, {
+        duration: 3,
+        x: 1,
+        y: 1,
+        z: 1,
+        ease: "power2.out",
+        delay: 0.5,
+      });
     });
 
     loader.load("/fonts/helvetiker_regular.typeface.json", function (font) {
@@ -244,7 +311,18 @@ const ThreeScene = () => {
       const mesh = new THREE.Mesh(geometry, material);
       mesh.position.set(4, 3, 0);
 
+      mesh.scale.set(0, 0, 0);
+
       scene.add(mesh);
+
+      gsap.to(mesh.scale, {
+        duration: 3,
+        x: 1,
+        y: 1,
+        z: 1,
+        ease: "power2.out",
+        delay: 0.5,
+      });
     });
 
     loader.load("/fonts/helvetiker_regular.typeface.json", function (font) {
@@ -273,7 +351,18 @@ const ThreeScene = () => {
       const mesh = new THREE.Mesh(geometry, material);
       mesh.position.set(5, 1, 0);
 
+      mesh.scale.set(0, 0, 0);
+
       scene.add(mesh);
+
+      gsap.to(mesh.scale, {
+        duration: 3,
+        x: 1,
+        y: 1,
+        z: 1,
+        ease: "power2.out",
+        delay: 0.5,
+      });
     });
 
     // Load Heart Model into the Group
@@ -283,7 +372,7 @@ const ThreeScene = () => {
 
     gltfLoader.load("/models/robotic_heart.glb", (gltf: GLTF) => {
       heart = gltf.scene as THREE.Group;
-      heart.scale.set(baseScale, baseScale, baseScale);
+      heart.scale.set(0, 0, 0);
       heart.position.set(0, -0.4, 0);
 
       // Traverse the heart model and update its material
@@ -300,6 +389,14 @@ const ThreeScene = () => {
       });
 
       scene.add(heart);
+
+      gsap.to(heart.scale, {
+        duration: 3,
+        x: baseScale,
+        y: baseScale,
+        z: baseScale,
+        ease: "power2.out",
+      });
     });
 
     // Animate the Scene (Pulsating Heart & Mouse-Based Rotation)
