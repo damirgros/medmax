@@ -81,7 +81,7 @@ const ThreeScene = () => {
         y: 1,
         z: 1,
         ease: "power2.out",
-        delay: 0.5,
+        delay: 1,
       });
     });
 
@@ -121,7 +121,7 @@ const ThreeScene = () => {
         y: 1,
         z: 1,
         ease: "power2.out",
-        delay: 0.5,
+        delay: 1,
       });
     });
 
@@ -161,7 +161,7 @@ const ThreeScene = () => {
         y: 1,
         z: 1,
         ease: "power2.out",
-        delay: 0.5,
+        delay: 1,
       });
     });
 
@@ -201,7 +201,7 @@ const ThreeScene = () => {
         y: 1,
         z: 1,
         ease: "power2.out",
-        delay: 0.5,
+        delay: 1,
       });
     });
 
@@ -241,7 +241,7 @@ const ThreeScene = () => {
         y: 1,
         z: 1,
         ease: "power2.out",
-        delay: 0.5,
+        delay: 1,
       });
     });
 
@@ -281,7 +281,7 @@ const ThreeScene = () => {
         y: 1,
         z: 1,
         ease: "power2.out",
-        delay: 0.5,
+        delay: 1,
       });
     });
 
@@ -321,7 +321,7 @@ const ThreeScene = () => {
         y: 1,
         z: 1,
         ease: "power2.out",
-        delay: 0.5,
+        delay: 1,
       });
     });
 
@@ -361,11 +361,11 @@ const ThreeScene = () => {
         y: 1,
         z: 1,
         ease: "power2.out",
-        delay: 0.5,
+        delay: 1,
       });
     });
 
-    // Load Heart Model into the Group
+    // Load the Heart Model
     const gltfLoader = new GLTFLoader();
     let heart: THREE.Group | null = null;
     const baseScale = 2;
@@ -453,7 +453,10 @@ const ThreeScene = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden" ref={mountRef}>
+    <section
+      className="relative w-full h-screen overflow-hidden"
+      ref={mountRef}
+    >
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         src="/videos/video.mp4"
@@ -463,7 +466,7 @@ const ThreeScene = () => {
         playsInline
         style={{ zIndex: -1 }}
       />
-    </div>
+    </section>
   );
 };
 
